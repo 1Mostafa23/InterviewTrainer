@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:5151
+
+### Start Interview Session
+POST {{baseUrl}}/api/Interview/Start
+Content-Type: application/json
+
+{
+  "userId": "00000000-0000-0000-0000-000000000000"
+}
+
+### Get Interview Session by ID
+GET {{baseUrl}}/api/Interview/00000000-0000-0000-0000-000000000000
+
+### Start Interview (change status to InProgress)
+PATCH {{baseUrl}}/api/Interview/00000000-0000-0000-0000-000000000000/start
+
+### Complete Interview Session
+PATCH {{baseUrl}}/api/Interview/00000000-0000-0000-0000-000000000000/complete
+Content-Type: application/json
+
+{
+  "score": 85,
+  "summary": "Отличное интервью, показал хорошие знания",
+  "tips": "Рекомендую изучить паттерны проектирования глубже"
+}
+
+###
